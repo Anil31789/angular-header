@@ -1,0 +1,29 @@
+<div class="row justify-content-center">
+    <div class="col-md-6 text-left bg-white rounded shadow py-3">
+        <form (ngSubmit)="onSubmit(myForms)" #myForms="ngForm">
+            <div class="form-group">
+                <label for="username">Username*</label>
+                <input type="text" class="form-control" id="username" placeholder="username.." name="username"
+                    [(ngModel)]="username" required>
+                <small *ngIf="username">Username is {{username}}</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address*</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                    placeholder="Enter email" name="email" ngModel required email #validEmail="ngModel">
+                <small class="text-success" *ngIf="!validEmail.valid && validEmail.touched">Please enter valid
+                    email</small>
+            </div>
+
+            <div class="form-group">
+                <label class="form-check-label" for="course">Select course</label>
+                <select class="form-control" id="course" name="course" [ngModel]="setdefault">
+                    <option value="Angular">Angular</option>
+                    <option value="html">HTML</option>
+                    <option value="javascript">javascript</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="!myForms.valid">Submit</button>
+        </form>
+    </div>
+</div>

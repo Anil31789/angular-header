@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <form>
+                <!-- text input -->
+                <div class="form-outline mb-4">
+                    <input #username type="text" id="form2Example1" class="form-control" placeholder="Username" />
+                </div>
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                    <input #password type="password" id="form2Example2" class="form-control" placeholder="password" />
+                </div>
+                <!-- Submit button -->
+                <button (click)="onLoggedInUser(username, password)" type="button"
+                    class="btn btn-primary btn-block mb-4">Sign
+                    in</button>
+            </form>
+        </div>
+    </div>
+</div>

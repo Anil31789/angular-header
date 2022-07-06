@@ -1,0 +1,47 @@
+<div class="container-fluid">
+    <header
+        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <div class="block left">
+            <a href="/" class="d-flex align-items-center mb-2 mb-md-0 text-dark text-decoration-none">
+                <img src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png">
+            </a>
+            <ng-container *ngIf="gobackLink">
+                <a href="#" class="back">
+                    Back to Product
+                </a>
+                <a href="#" class="back">
+                    Back to gallary
+                </a>
+            </ng-container>
+        </div>
+
+
+        <ul *ngIf="headerNav" class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li><a routerLink="/" class="nav-link px-2 link-secondary">Home</a></li>
+            <li><a routerLink="/about" class="nav-link px-2 link-dark">About Us</a></li>
+            <li><a routerLink="/gallery" class="nav-link px-2 link-dark">Gallery</a></li>
+            <li><a routerLink="/product" class="nav-link px-2 link-dark">Product</a></li>
+            <li><a routerLink="/contact" class="nav-link px-2 link-dark">Contct Us</a></li>
+        </ul>
+
+
+        <ng-container *ngIf="hederLoginBock">
+            <a routerLink="/login">
+                <button *ngIf="!loginUser" type="button" class="btn btn-primary">Sign-up</button>
+            </a>
+            <ul *ngIf="loginUser">
+                <li>Welcome <strong class="text-primary">{{loginUser}}</strong></li>
+                <li>
+                    <button type="button" class="btn btn-primary" (click)="logout()">Logout</button>
+                </li>
+            </ul>
+        </ng-container>
+        <ng-container *ngIf="headerontctDetils">
+            <a href="#">anil.rai2789@gmail.com</a>
+            <a href="#">96300258741</a>
+        </ng-container>
+
+
+    </header>
+    <router-outlet></router-outlet>
+</div>
