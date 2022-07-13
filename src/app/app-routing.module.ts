@@ -1,3 +1,4 @@
+import { ManageUserComponent } from './manage-user/manage-user.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'gallery', component: GalleryComponent },
   { path: 'product', component: ProductComponent },
+  { path: 'manage-user', component: ManageUserComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'login', component: LoginComponent },
 ];

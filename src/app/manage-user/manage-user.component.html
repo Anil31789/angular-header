@@ -1,0 +1,48 @@
+<div class="wapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="heading">
+                    <h2>Add User</h2>
+                    <form #userForm="ngForm" (ngSubmit)="onAddUser(userForm.value)">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">User Name</label>
+                            <input type="text" class="form-control" autocomplete="off" name="name" ngModel required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Technology Use</label>
+                            <input type="text" class="form-control" autocomplete="off" name="technology" ngModel
+                                required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">{{editMode? 'Update User' : 'Add user'}}</button>
+                        <button type="button" class="btn btn-danger">Fatch Product</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="heading">
+                    <h2>Users List</h2>
+                    <table class="table table-striped table-dark">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th scope="col">Technoology</th>
+                                <th scope="col">Edit</th>
+                                <th scope="col">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let user of users, index as i">
+                                <th>{{user.name}}</th>
+                                <th scope="row">{{user.technology}}</th>
+                                <td><a (click)="onEditUser(user.userId, i)">Edit</a></td>
+                                <td><a (click)="onDeleteUser(user.userId)">X</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
